@@ -26,6 +26,12 @@ morpheus_utils_create_python_package(morpheus
   SOURCE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/morpheus"
 )
 
+# Include the main morpheus code
+morpheus_utils_create_python_package(morpheus_llm
+  PROJECT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+  SOURCE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/morpheus_llm"
+)
+
 add_subdirectory(morpheus)
 
 # Complete the python package
