@@ -26,7 +26,7 @@ morpheus_utils_python_configure()
 # fixme: add another subdirectory src and change SOURCE_DIRECTORY to ${CMAKE_CURRENT_SOURCE_DIR}/src
 morpheus_utils_create_python_package(morpheus_llm
   PROJECT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-  SOURCE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR"
+  SOURCE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 )
 
 add_subdirectory(_lib)

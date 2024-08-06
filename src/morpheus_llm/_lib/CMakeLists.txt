@@ -20,13 +20,14 @@ include(cmake/libmorpheus.cmake)
 
 ########### py_morpheus_llm ########
 # Set the default link targets to avoid repeating this
+# fixme: is this needed? see _lib/llm/CMakeLists.txt:morpheus_add_pybind11_module
 morpheus_utils_python_package_set_default_link_targets(morpheus_llm)
 
 #----------morpheus._lib.llm---------
 add_subdirectory(llm)
 
 
-# fixme
+# fixme: replace with MORPHEUS_BUILD_TESTS once tests building is ready
 if (MORPHEUS_BUILD_TESTS_LLM)
   add_subdirectory(tests)
 endif()
