@@ -16,6 +16,6 @@
 list(APPEND CMAKE_MESSAGE_CONTEXT "src")
 
 add_subdirectory(morpheus)
-add_subdirectory(morpheus_llm)
+#add_subdirectory(morpheus_llm)
 
 list(POP_BACK CMAKE_MESSAGE_CONTEXT)

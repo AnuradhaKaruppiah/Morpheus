@@ -15,6 +15,7 @@
 # re-run 'versioneer setup' after changing this section, and commit the
 # resulting files.
 
+'''
 from setuptools import find_packages  # noqa: E402
 from setuptools import setup  # noqa: E402
 
@@ -40,3 +41,4 @@ setup(
     license="Apache",
     python_requires='>=3.10, <4',
 )
+'''
