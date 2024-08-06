@@ -28,7 +28,6 @@ target_link_libraries(test_cuda
   PRIVATE
     GTest::gtest
     GTest::gtest_main
-    matx::matx
 )
 
 gtest_discover_tests(test_cuda)
@@ -92,95 +91,15 @@ function(add_morpheus_test)
 endfunction()
 
 add_morpheus_test(
-  NAME io
+  NAME llm
   FILES
-    io/test_data_loader.cpp
-    io/test_data_loader_registry.cpp
-    io/test_loaders.cpp
-)
-
-add_morpheus_test(
-  NAME messages
-  FILES
-    messages/test_control_message.cpp
-    messages/test_dev_doc_ex3.cpp
-    messages/test_sliced_message_meta.cpp
-    messages/test_message_meta.cpp
-)
-
-add_morpheus_test(
-  NAME modules
-  FILES
-    modules/test_data_loader_module.cpp
-)
-
-add_morpheus_test(
-  NAME objects
-  FILES
-    objects/test_dtype.cpp
-)
-
-add_morpheus_test(
-  NAME deserializers
-  FILES
-    test_deserializers.cpp
-)
-
-add_morpheus_test(
-  NAME dev_mem_info
-  FILES
-    test_dev_mem_info.cpp
-)
-
-add_morpheus_test(
-  NAME file_in_out
-  FILES
-    test_file_in_out.cpp
-)
-
-add_morpheus_test(
-  NAME matx_util
-  FILES
-    test_matx_util.cpp
-)
-
-add_morpheus_test(
-  NAME multi_slices
-  FILES
-    test_multi_slices.cpp
-)
-
-add_morpheus_test(
-  NAME stages
-  FILES
-    stages/test_preprocess_nlp.cpp
-    stages/test_preprocess_fil.cpp
-    stages/test_add_scores.cpp
-    stages/test_add_classification.cpp
-)
-
-add_morpheus_test(
-  NAME tensor
-  FILES
-    test_tensor.cpp
-)
-
-add_morpheus_test(
-  NAME triton_inference_stage
-  FILES
-    stages/test_triton_inference_stage.cpp
-)
-
-add_morpheus_test(
-  NAME type_util
-  FILES
-    test_type_util.cpp
-)
-
-add_morpheus_test(
-  NAME table_util
-  FILES
-    utilities/test_table_util.cpp
+    llm/test_llm_context.cpp
+    llm/test_llm_engine.cpp
+    llm/test_llm_node.cpp
+    llm/test_llm_node_runner.cpp
+    llm/test_llm_task.cpp
+    llm/test_llm_task_handler_runner.cpp
+    llm/test_utils.cpp
 )
 
 list(POP_BACK CMAKE_MESSAGE_CONTEXT)
