@@ -15,14 +15,12 @@
 # re-run 'versioneer setup' after changing this section, and commit the
 # resulting files.
 
-import versioneer
 from setuptools import find_packages  # noqa: E402
 from setuptools import setup  # noqa: E402
 
 setup(
     name="morpheus_llm",
-    version=versioneer.get_version(),  # pylint: disable=no-member
-    description="Morpheus LLM
+    description="Morpheus LLM",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: GPU :: NVIDIA CUDA",
@@ -41,5 +39,4 @@ setup(
     install_requires=[],
     license="Apache",
     python_requires='>=3.10, <4',
-    cmdclass=versioneer.get_cmdclass(),  # pylint: disable=no-member
 )
