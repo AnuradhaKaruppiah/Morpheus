@@ -15,42 +15,7 @@
 
 list(APPEND CMAKE_MESSAGE_CONTEXT "src")
 
-# #################################
-# #### Morpheus Python Setup ######
-# #################################
-morpheus_utils_python_configure()
-
-# Include the main morpheus code
-morpheus_utils_create_python_package(morpheus
-  PROJECT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-  SOURCE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/morpheus"
-)
-
-# Include the main morpheus code
-morpheus_utils_create_python_package(morpheus_llm
-  PROJECT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-  SOURCE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/morpheus_llm"
-)
-
 add_subdirectory(morpheus)
-
-# Complete the python package
-if(MORPHEUS_PYTHON_INPLACE_BUILD)
-  list(APPEND extra_args "IS_INPLACE")
-endif()
-
-if(MORPHEUS_PYTHON_BUILD_WHEEL)
-  list(APPEND extra_args "BUILD_WHEEL")
-endif()
-
-if(MORPHEUS_PYTHON_PERFORM_INSTALL)
-  list(APPEND extra_args "INSTALL_WHEEL")
-endif()
-
-file(GLOB morpheus_data_files "${CMAKE_CURRENT_SOURCE_DIR}/morpheus/data/*")
-morpheus_utils_add_python_sources(${morpheus_data_files})
-
-morpheus_utils_build_python_package(morpheus ${extra_args})
-
+add_subdirectory(morpheus_llm)
 
 list(POP_BACK CMAKE_MESSAGE_CONTEXT)

@@ -16,9 +16,34 @@
 list(APPEND CMAKE_MESSAGE_CONTEXT "morpheus_llm")
 
 # Save the root of the python for relative paths
+# Where is this used, fixme
 set(MORPHEUS_LLM_PY_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/..)
+
+# Morpheus LLM Python Setup
+morpheus_utils_python_configure()
+
+# Include the morpheus llm code
+# fixme: add another subdirectory src and change SOURCE_DIRECTORY to ${CMAKE_CURRENT_SOURCE_DIR}/src
+morpheus_utils_create_python_package(morpheus_llm
+  PROJECT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+  SOURCE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR"
+)
 
 add_subdirectory(_lib)
 
+# Complete the python package
+if(MORPHEUS_PYTHON_INPLACE_BUILD)
+  list(APPEND extra_args "IS_INPLACE")
+endif()
+
+if(MORPHEUS_PYTHON_BUILD_WHEEL)
+  list(APPEND extra_args "BUILD_WHEEL")
+endif()
+
+if(MORPHEUS_PYTHON_PERFORM_INSTALL)
+  list(APPEND extra_args "INSTALL_WHEEL")
+endif()
+
+morpheus_utils_build_python_package(morpheus_llm ${extra_args})
 
 list(POP_BACK CMAKE_MESSAGE_CONTEXT)

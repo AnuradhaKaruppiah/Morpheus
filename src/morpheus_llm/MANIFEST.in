@@ -1,0 +1,1 @@
+recursive-include . *.cpython*.so py.typed *.pyi

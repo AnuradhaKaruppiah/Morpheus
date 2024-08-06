@@ -1,0 +1,3 @@
+include _version.py
+recursive-include data *
+recursive-include . *.cpython*.so py.typed *.pyi

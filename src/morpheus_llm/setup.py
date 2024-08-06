@@ -20,9 +20,9 @@ from setuptools import find_packages  # noqa: E402
 from setuptools import setup  # noqa: E402
 
 setup(
-    name="morpheus",
+    name="morpheus_llm",
     version=versioneer.get_version(),  # pylint: disable=no-member
-    description="Morpheus",
+    description="Morpheus LLM
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: GPU :: NVIDIA CUDA",
@@ -37,13 +37,9 @@ setup(
     ],
     author="NVIDIA Corporation",
     include_package_data=True,
-    packages=find_packages(include="morpheus*"),
+    packages=find_packages(),
     install_requires=[],
     license="Apache",
     python_requires='>=3.10, <4',
     cmdclass=versioneer.get_cmdclass(),  # pylint: disable=no-member
-    entry_points='''
-        [console_scripts]
-        morpheus=morpheus.cli:run_cli
-        ''',
 )

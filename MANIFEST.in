@@ -1,3 +1,0 @@
-include src/morpheus/_version.py
-recursive-include src/morpheus/data *
-recursive-include src/morpheus *.cpython*.so py.typed *.pyi
