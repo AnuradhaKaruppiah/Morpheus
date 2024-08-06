@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-list(APPEND CMAKE_MESSAGE_CONTEXT "morpheus")
+list(APPEND CMAKE_MESSAGE_CONTEXT "package_morpheus")
 
 # Save the root of the python for relative paths
 # Where is this used, fixme
@@ -29,10 +29,10 @@ morpheus_utils_python_configure()
 # fixme: add another subdirectory src and change SOURCE_DIRECTORY to ${CMAKE_CURRENT_SOURCE_DIR}/src
 morpheus_utils_create_python_package(morpheus
   PROJECT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-  SOURCE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+  SOURCE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/morpheus"
 )
 
-add_subdirectory(_lib)
+add_subdirectory(morpheus)
 
 # Complete the python package
 if(MORPHEUS_PYTHON_INPLACE_BUILD)
@@ -47,7 +47,7 @@ if(MORPHEUS_PYTHON_PERFORM_INSTALL)
   list(APPEND extra_args "INSTALL_WHEEL")
 endif()
 
-file(GLOB morpheus_data_files "${CMAKE_CURRENT_SOURCE_DIR}/data/*")
+file(GLOB morpheus_data_files "${CMAKE_CURRENT_SOURCE_DIR}/morpheus/data/*")
 morpheus_utils_add_python_sources(${morpheus_data_files})
 
 morpheus_utils_build_python_package(morpheus ${extra_args})

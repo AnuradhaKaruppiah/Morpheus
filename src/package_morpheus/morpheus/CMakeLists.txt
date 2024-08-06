@@ -13,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-list(APPEND CMAKE_MESSAGE_CONTEXT "src")
+list(APPEND CMAKE_MESSAGE_CONTEXT "morpheus")
 
-add_subdirectory(package_morpheus)
-#add_subdirectory(morpheus_llm)
+add_subdirectory(_lib)
 
 list(POP_BACK CMAKE_MESSAGE_CONTEXT)
