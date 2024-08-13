@@ -29,7 +29,7 @@ list(APPEND MODULE_SOURCE_FILES module.cpp)
 morpheus_add_pybind11_module(llm
    INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include
    SOURCE_FILES ${MODULE_SOURCE_FILES}
-   LINK_TARGETS morpheus
+   LINK_TARGETS morpheus_llm
    CURRENT_DIR_IS_MODULE
 )
 

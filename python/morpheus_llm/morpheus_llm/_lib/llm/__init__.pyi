@@ -1,14 +1,14 @@
 """
         -----------------------
-        .. currentmodule:: morpheus.llm
+        .. currentmodule:: morpheus_llm.llm
         .. autosummary::
            :toctree: _generate
 
         """
 from __future__ import annotations
-import morpheus._lib.llm
+import morpheus_llm._lib.llm
 import typing
-import morpheus._lib.messages
+import morpheus_llm._lib.messages
 import mrc.core.coro
 import mrc.core.segment
 
@@ -114,7 +114,7 @@ class LLMNodeBase():
 
         Parameters
         ----------
-        context : `morpheus._lib.llm.LLMContext`
+        context : `morpheus_llm._lib.llm.LLMContext`
             Context instance to use for the execution
         """
     def get_input_names(self) -> typing.List[str]: 
