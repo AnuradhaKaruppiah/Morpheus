@@ -187,7 +187,7 @@ RUN --mount=type=cache,id=workspace_cache,target=/workspace/.cache,sharing=locke
     git config --global --add safe.directory "*" &&\
     # Change to the morpheus directory and build the conda package
     cd ${MORPHEUS_ROOT_HOST} &&\
-    MORPHEUS_PYTHON_BUILD_STUBS=OFF CONDA_BLD_PATH=/opt/conda/conda-bld ./ci/conda/recipes/run_conda_core_build.sh morpheus_core
+    MORPHEUS_PYTHON_BUILD_STUBS=OFF CONDA_TOKEN=an-dbaca8a6-e42d-4308-a244-4ba1081be45d CONDA_BLD_PATH=/opt/conda/conda-bld ./ci/conda/recipes/run_conda_core_build.sh morpheus_core upload
 
 # ============ Stage: base_extended ============
 # Base environment with any optional extensions. ex. DOCA libs
