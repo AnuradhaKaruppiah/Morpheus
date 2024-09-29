@@ -127,6 +127,7 @@ outputs:
         - scripts/fetch_data.py
       imports:
         - morpheus
+        - morpheus_dfp
       commands:
           - echo # make sure test requirements get installed
 
