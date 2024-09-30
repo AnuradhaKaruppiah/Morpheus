@@ -182,6 +182,7 @@ outputs:
         - ninja =1.11
         - pkg-config =0.29
       host:
+        - cuda-version {{ cuda_compiler_version }}.*
         - cudf {{ rapids_version }}
         - cython 3.0.*
         - glog 0.6.*
