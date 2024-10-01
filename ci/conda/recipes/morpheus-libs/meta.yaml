@@ -175,20 +175,15 @@ outputs:
     requirements:
       build:
         - {{ compiler("c") }}
-        - {{ compiler("cuda") }}
         - {{ compiler("cxx") }}
         - ccache
         - cmake =3.27
         - ninja =1.11
         - pkg-config =0.29
       host:
-        - cuda-version {{ cuda_compiler_version }}.*
-        - cudf {{ rapids_version }}
+        - {{ pin_subpackage('morpheus-core', exact=True) }}
         - cython 3.0.*
         - glog 0.6.*
-        - libcudf {{ rapids_version }}
-        - librdkafka >=1.9.2,<1.10.0a0
-        - {{ pin_subpackage('morpheus-core', exact=True) }}
         - pip
         - pybind11-stubgen 0.10.5
         - python {{ python }}
