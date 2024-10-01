@@ -13,22 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-list(APPEND CMAKE_MESSAGE_CONTEXT "python")
+list(APPEND CMAKE_MESSAGE_CONTEXT "morpheus_doca")
 
-if (MORPHEUS_BUILD_MORPHEUS_CORE)
-add_subdirectory(morpheus)
-endif()
 
-if (MORPHEUS_BUILD_MORPHEUS_DFP)
-add_subdirectory(morpheus_dfp)
-endif()
+add_subdirectory(_lib)
 
-if (MORPHEUS_SUPPORT_DOCA)
-add_subdirectory(morpheus_doca)
-endif()
-
-if (MORPHEUS_BUILD_MORPHEUS_LLM)
-add_subdirectory(morpheus_llm)
-endif()
 
 list(POP_BACK CMAKE_MESSAGE_CONTEXT)
