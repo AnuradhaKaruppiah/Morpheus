@@ -20,6 +20,7 @@ This script is used as test input for morpheus_namespace_update.py script.
 # Disable all checkers
 # flake8: noqa
 # isort: skip_file
+# yapf: disable
 
 # old DFP import patterns
 from dfp.utils.config_generator import ConfigGenerator
