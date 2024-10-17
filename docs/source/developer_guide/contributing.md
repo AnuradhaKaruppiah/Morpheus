@@ -186,14 +186,8 @@ git submodule update --init --recursive
    ```bash
    ./scripts/compile.sh
    ```
-   This script will run both CMake Configure with default options and CMake build.
-1. Install Morpheus
-   ```bash
-   pip install -e ${MORPHEUS_ROOT}/python/morpheus
-   pip install -e ${MORPHEUS_ROOT}/python/morpheus_llm
-   pip install -e ${MORPHEUS_ROOT}/python/morpheus_dfp
-   ```
-   Once Morpheus has been built, it can be installed into the current virtual environment.
+   This script will run both CMake Configure with default options and CMake build. It also installs editable python packages, moepheus, morpheus_dfp and morpheus_llm.
+
 1. Test the build (Note: some tests will be skipped)\
    Some of the tests will rely on external data sets.
    ```bash
